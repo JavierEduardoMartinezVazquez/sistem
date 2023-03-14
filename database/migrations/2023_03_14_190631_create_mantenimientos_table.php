@@ -15,6 +15,8 @@ class CreateMantenimientosTable extends Migration
     {
         Schema::create('mantenimientos', function (Blueprint $table) {
             $table->id();
+            $table->string("descripcion");
+            $table->double("precio");
             $table->timestamps();
         });
     }

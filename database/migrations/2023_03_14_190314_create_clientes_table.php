@@ -15,6 +15,12 @@ class CreateClientesTable extends Migration
     {
         Schema::create('clientes', function (Blueprint $table) {
             $table->id();
+            $table->string('nombrec');
+            $table->string('apellidoc');
+            $table->integer('id_number')->unique();
+            $table->string('email')->unique();
+            $table->text('direccion');
+            $table->string('tel');
             $table->timestamps();
         });
     }
