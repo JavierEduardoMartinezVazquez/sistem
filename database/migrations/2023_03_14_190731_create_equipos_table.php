@@ -15,7 +15,7 @@ class CreateEquiposTable extends Migration
     {
         Schema::create('equipos', function (Blueprint $table) {
             $table->id();
-            $table->unsignedBigInteger('cliente_id')->nullable();
+            $table->unsignedBigInteger('cliente_id');
             $table->unsignedBigInteger('user_id')->nullable();
             $table->text('descripcion');
             $table->enum('estatus', ['Recibido', 'Procesando', 'Terminado', 'Entregado']);
@@ -26,7 +26,7 @@ class CreateEquiposTable extends Migration
             $table->foreign('cliente_id')
             ->references('id')
             ->on('clientes')
-            ->onDelete('set null'); //con set null no se eliminan de la otra tabla y cascade si se elimina de ambas
+            ->onDelete('cascade'); //con set null no se eliminan de la otra tabla y cascade si se elimina de ambas
         
 
             $table->foreign('user_id')

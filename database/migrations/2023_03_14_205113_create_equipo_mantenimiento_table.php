@@ -19,12 +19,12 @@ class CreateEquipoMantenimientoTable extends Migration
             $table->unsignedBigInteger('mantenimiento_id');
             $table->timestamps();
 
-            $table->foreing('equipo_id')->references('id')
+            $table->foreign('equipo_id')->references('id')
             ->on('equipos')
-            ->onDelete('set null');
-            $table->foreing('mantenimiento_id')->references('id')
+            ->onDelete('cascade');
+            $table->foreign('mantenimiento_id')->references('id')
             ->on('mantenimientos')
-            ->onDelete('set null');
+            ->onDelete('cascade');
         });
     }
 
