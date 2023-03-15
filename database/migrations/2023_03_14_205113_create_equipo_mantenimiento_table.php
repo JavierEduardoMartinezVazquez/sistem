@@ -15,16 +15,16 @@ class CreateEquipoMantenimientoTable extends Migration
     {
         Schema::create('equipo_mantenimiento', function (Blueprint $table) {
             $table->id();
-            $table->unsignedBigInteger('equipo_id');
-            $table->unsignedBigInteger('mantenimiento_id');
+            $table->unsignedBigInteger('equipo_id')->nullable();
+            $table->unsignedBigInteger('mantenimiento_id')->nullable();
             $table->timestamps();
 
             $table->foreign('equipo_id')->references('id')
             ->on('equipos')
-            ->onDelete('cascade');
+            ->onDelete('set null');
             $table->foreign('mantenimiento_id')->references('id')
             ->on('mantenimientos')
-            ->onDelete('cascade');
+            ->onDelete('set null');
         });
     }
 
