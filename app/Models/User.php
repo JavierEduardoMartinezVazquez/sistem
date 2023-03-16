@@ -19,7 +19,7 @@ class User extends Authenticatable
      */
     protected $fillable = [
         'nombre',
-        'apellido',
+        'lastname',
         'email',
         'foto',
         'password',
@@ -43,7 +43,7 @@ class User extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
-    
+
     public function equipos(){
 
         return $this->hasMany('\App\Models\Equipo');
