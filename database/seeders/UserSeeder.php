@@ -14,7 +14,7 @@ class UsersSeeder extends Seeder
      */
     public function run()
     {
-        User::factory(1)->create([
+        /* User::factory(1)->create([
             'nombre' => 'Javier',
             'lastname' => 'Martinez',
             'email' => 'javier.martinez@correo.com.mx',
@@ -22,7 +22,7 @@ class UsersSeeder extends Seeder
             'email_verified_at' => now(),
             'password' => Hash::make('hola123'),
             'remember_token' => Str::random(10),
-        ]);
+        ]); */
 
         User::factory()->create();
     }

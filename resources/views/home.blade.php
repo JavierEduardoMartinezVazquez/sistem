@@ -13,7 +13,7 @@
                             {{ session('status') }}
                         </div>
                     @endif
-
+                    <i class="fa-regular fa-face-smile"></i>
                     {{ __('You are logged in!') }}
                 </div>
             </div>
